@@ -24,7 +24,7 @@
 			<div id="header">
 				<div>
 					<div id="logo">
-						<img src="crystal.png">PDF DocViewer
+						PDF DocViewer
 					</div>
 				</div>
 			</div>
