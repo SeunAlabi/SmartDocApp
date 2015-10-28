@@ -61,7 +61,7 @@
 						<div class="row">
 							<div class="form-group col-md-10 col-md-offset-1">
 								Password:
-									<input type="password" name="password" placeholder="password" class="form-control" maxlength="8"required="required" />
+									<input type="password" name="password" placeholder="password" class="form-control" maxlength="8" required="required" />
  
 
 							</div>

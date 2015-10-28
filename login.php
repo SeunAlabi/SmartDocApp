@@ -1,4 +1,4 @@
-<?php 
+<?php 0-
 session_start();
 require_once "connection.php";
 require_once "User.php";

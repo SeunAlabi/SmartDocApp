@@ -2,20 +2,13 @@
 <?php 
 
 session_start();
-require_once"connection.php";
 require_once"User.php";
-require_once"UserDao.php";
 
 
-		// Calls the register, Connection and RegisterDao classes
+		// Calls user class
 	$user_object = new User();
-	
-	$con= new Connection();
-	$connection = $con->getConnection(); 
-
-	$UserDao_object = new UserDao($connection);
-	$UserDao_object->registerUser($user_object);
-
+	$username = $user_object->getusername();
+	$password = $user_object->getpassword();
 	?>
 
 <html lang="en">
@@ -34,18 +27,29 @@ require_once"UserDao.php";
   <body>
   
     <div class="col-md-3 col-md-offset-4">
-	<div class="title">
-				PDFDoc Viewer
-	</div>
-		<!-- Displays the automatically generated Username and Password of the User -->
-	<div class="contenting">
-		<div class="row">
-		
-			<div class="alert alert-success" role="alert"> USERNAME:<?php echo $user_object->getusername()."<br/>";?> </span></div>
-			<div class="alert alert-info" role="alert"> PASSWORD:<?php echo $user_object->getpassword()."<br/>"; ?></div>
+		<div class="title">
+					PDFDoc Viewer
 		</div>
-		<p align="center"><button class="btn btn-primary"><a href="signin.php">HOME </a></button></p>
-	</div>
+			<!-- Displays the automatically generated Username and Password of the User -->
+		<div class="contenting">
+			<div class="row">
+			<form method="post" action="registerValidate.php">
+				USERNAME<input type="text" name="username" value="<?php echo $username;?>" >
+				<br/>
+				PASSWORD<input type="password" name="password" value="<?php echo $password; ?>" >
+					
+				<div class="input-group">
+				  <span class="input-group-addon" id="basic-addon1">@</span>
+				  <input type="text" name="email" class="form-control" placeholder="E-mail Adress" aria-describedby="basic-addon1">
+				</div>
+				
+				<p align="center"><button class="btn btn-info" type="submit" name="submit">REGISTER USER</button></p>		
+			</form>
+			</div>
+			</div>	
+			</div>
+			
+		</div>
 	</div>
 
 	</body>

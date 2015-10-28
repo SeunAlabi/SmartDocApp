@@ -18,8 +18,8 @@ class User{
 	}
 
 	//set functions
-	public function setusername($newuser){
-		$this->username = $newuser;
+	public function setusername($newusername){
+		$this->username = $newusername;
 	}
 	public function setpassword($newpassword){
 		$this->password = $newpassword;

@@ -12,12 +12,12 @@ class UserDao{
 	}
 	
 	//takes an object of class User
-	public function registerUser($user){
-		$username = $user->getusername();
-		$password= $user->getpassword();
+	public function registerUser($username, $password, $email){
+		//$username = $user->getusername();
+		//$password= $user->getpassword();
 		
 	// inserts the username and password into the databse
-		$query= "insert into login values(null, '$username', '$password',0)" ;		
+		$query= "insert into login values(null, '$username', '$password','$email', 0)" ;		
 		$result=$this->connection->query($query) or die (mysqli_error($this->connection));
 	}
 	
